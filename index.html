@@ -1,282 +1,212 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>NFT Site</title>
+		<title>NFT Website</title>
 		<!-- META TAGS -->
 		<meta charset="utf-8">
 		<meta name="viewport" content="initial-scale=1.0, width=device-width">
 		<!-- LINKS -->
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 	</head>
 	<body>
-		<p class="mobile-size">
-			sorry website isn't resonsive.
-		</p>
-		<aside>
-			<div class="logo">
-				<span>NFT Site</span>
-			</div>
-			<div class="aside-list">
-				<p>Marketplace</p>
-				<div>
-					<a href="#" class="active">
-						<i class="fa-solid fa-house"></i>
-						<span>NFT Store</span>
+		<div class="sidebar">
+			<h1 class="sidebar__logo">NFTGeek</h1>
+			<ul class="sidebar__menu">
+				<h3 class="sidebar__menu-title">marketplace</h3>
+				<li class="sidebar__menu-item active">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bxs-home'></i></span>
+						<span class="sidebar__menu-text">NFT Store</span>
 					</a>
-					<a href="#">
-						<i class="fa-solid fa-gift"></i>
-						<span>Gifts</span>
+				</li>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-chart'></i></span>
+						<span class="sidebar__menu-text">Active Bids</span>
 					</a>
-					<a href="#">
-						<i class="fa-regular fa-heart"></i>
-						<span>Favorites</span>
+				</li>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-heart'></i></span>
+						<span class="sidebar__menu-text">Favorites</span>
 					</a>
-				</div>
-			</div>
-			<div class="aside-list">
-				<p>Account</p>
-				<div>
-					<a href="#">
-						<i class="fa-solid fa-folder-open"></i>
-						<span>My Collection</span>
+				</li>
+			</ul>
+			<ul class="sidebar__menu">
+				<h3 class="sidebar__menu-title">account</h3>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-folder'></i></span>
+						<span class="sidebar__menu-text">My Collection</span>
 					</a>
-					<a href="#">
-						<i class="fa-solid fa-wallet"></i>
-						<span>Wallet</span>
+				</li>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-wallet-alt'></i></span>
+						<span class="sidebar__menu-text">Wallet</span>
 					</a>
-					<a href="#">
-						<i class="fa-solid fa-clock-rotate-left"></i>
-						<span>History</span>
+				</li>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-history'></i></span>
+						<span class="sidebar__menu-text">History</span>
 					</a>
-					<a href="#">
-						<i class="fa-solid fa-gear"></i>
-						<span>Settings</span>
+				</li>
+				<li class="sidebar__menu-item">
+					<a href="#" class="sidebar__menu-link ai-center">
+						<span class="sidebar__menu-icon go-center"><i class='bx bx-cog'></i></span>
+						<span class="sidebar__menu-text">Settings</span>
 					</a>
-				</div>
-			</div>
-			<div class="info-box">
-				<p>important Guide in NFT Transactions</p>
-				<a href="#">Learn More</a>
-			</div>
-		</aside>
+				</li>
+			</ul>
+		</div>
 		<main>
-			<div class="left">
-				<form method="GET" action="/">
-					<label for="search">
-						<i class="fa-solid fa-search"></i>
-					</label>
-					<input type="text" name="search" placeholder="Search items, callections, and accounts" id="search">
+			<div class="content">
+				<form class="searchbar" action="/" method="GET">
+					<span class="searchbar__icon go-center"><i class='bx bx-search'></i></span>
+					<input type="text" name="search" class="searchbar__input" placeholder="Search items, collections, and accounts">
 				</form>
-				<div class="suggest-box">
-					<div>
-						<p>Let's Create Your Own NFT</p>
-						<div>
-							<a href="#">Start Sale</a>
-							<a href="#">Learn More</a>
+				<div class="suggestBox">
+					<div class="suggestBox__section">
+						<h2 class="suggestBox__text">Let's Create Your Own NFT</h2>
+						<div class="suggestBox__linkWrapper ai-center">
+							<a href="#" class="suggestBox__link btn">Start Sale</a>
+							<a href="#" class="suggestBox__link btn">Learn More</a>
 						</div>
+					</div>
+					<div class="suggestBox__section">
+						<img src="img/suggest2.png" class="suggestBox__picture">
 					</div>
 				</div>
-				<div class="nfts">
-					<div class="head">
-						<p>Trending Now</p>
-						<ul>
-							<li class="active">
-								<span>Art</span>
-							</li>
-							<li>
-								<span>Music</span>
-							</li>
-							<li>
-								<span>Game</span>
-							</li>
-							<li>
-								<span>Utility</span>
-							</li>
-							<li>
-								<a href="#"><i class="fa-solid fa-angle-right"></i></a>
-							</li>
-						</ul>
+				<div class="nftBox">
+					<div class="nftBox__header ai-center">
+						<h2 class="nftBox__title">Trending Now</h2>
+						<div class="nftBox__links ai-center">
+							<a href="#" class="nftBox__link active">Art</a>
+							<a href="#" class="nftBox__link">Music</a>
+							<a href="#" class="nftBox__link">Game</a>
+							<a href="#" class="nftBox__link">Utility</a>
+							<a href="#" class="nftBox__link"><i class='bx bxs-chevron-right'></i></a>
+						</div>
 					</div>
-					<div class="content">
-						<div class="nft">
-							<div class="nft-picture">
-								<img src="img/nft1.webp">
-								<i class="fa-regular fa-heart"></i>
+					<div class="nftBox__nftList">
+						<div class="nftBox__nft">
+							<div class="nftBox__nft-pictureBox">
+								<span class="nftBox__nft-like go-center iconWrapper"><i class='bx bxs-heart'></i></span>
+								<img src="img/nft1.webp" class="nftBox__nft-picture">
 							</div>
-							<div class="nft-information">
-								<div class="section s1">
-									<span>NFT 428 - monkey with hat art for sale</span>
-									<span>04:22:12</span>
-								</div>
-								<div class="section s2">
-									<div class="s2child">
-										<img src="img/profile1.jpg">
-										<div>
-											<span>Creator</span>
-											<span>Sara1275</span>
-										</div>
-									</div>
-									<div class="s2child">
-										<img src="img/eth.png">
-										<div>
-											<span>Current Bid</span>
-											<span>2.5 ETH</span>
-										</div>
+							<div class="nftBox__nft-row ai-center">
+								<h3 class="nftBox__nft-name">Nft Monkey 1</h3>
+								<span class="nftBox__nft-time btn">04:22:16</span>
+							</div>
+							<div class="nftBox__nft-row ai-center">
+								<div class="account">
+									<img src="img/profile1.jpg" class="account__picture">
+									<div class="account__information">
+										<p class="account__info2">Creator</p>
+										<p class="account__info1">WahyuPr</p>
 									</div>
 								</div>
-								<a href="#">Place a Bid</a>
+								<div class="account">
+									<img src="img/eth.png" class="account__picture">
+									<div class="account__information">
+										<p class="account__info2">Current Bid</p>
+										<p class="account__info1">2.4 ETH</p>
+									</div>
+								</div>
 							</div>
+							<button class="nftBox__nft-button btn">Place a Bid</button>
 						</div>
-						<div class="nft">
-							<div class="nft-picture">
-								<img src="img/nft2.jpg">
-								<i class="fa-solid fa-heart"></i>
+						<div class="nftBox__nft">
+							<div class="nftBox__nft-pictureBox">
+								<span class="nftBox__nft-like go-center iconWrapper"><i class='bx bxs-heart'></i></span>
+								<img src="img/nft2.jpg" class="nftBox__nft-picture">
 							</div>
-							<div class="nft-information">
-								<div class="section s1">
-									<span>NFT 428 - monkey with hat art for sale</span>
-									<span>04:22:12</span>
-								</div>
-								<div class="section s2">
-									<div class="s2child">
-										<img src="img/profile1.jpg">
-										<div>
-											<span>Creator</span>
-											<span>Sara1275</span>
-										</div>
-									</div>
-									<div class="s2child">
-										<img src="img/eth.png">
-										<div>
-											<span>Current Bid</span>
-											<span>2.5 ETH</span>
-										</div>
+							<div class="nftBox__nft-row ai-center">
+								<h3 class="nftBox__nft-name">Nft Monkey 2</h3>
+								<span class="nftBox__nft-time btn">00:12:16</span>
+							</div>
+							<div class="nftBox__nft-row ai-center">
+								<div class="account">
+									<img src="img/profile1.jpg" class="account__picture">
+									<div class="account__information">
+										<p class="account__info2">Creator</p>
+										<p class="account__info1">Toma_Art</p>
 									</div>
 								</div>
-								<a href="#">Place a Bid</a>
-							</div>
-						</div>
-						<div class="nft">
-							<div class="nft-picture">
-								<img src="img/nft2.jpg">
-								<i class="fa-solid fa-heart"></i>
-							</div>
-							<div class="nft-information">
-								<div class="section s1">
-									<span>NFT 428 - monkey with hat art for sale</span>
-									<span>04:22:12</span>
-								</div>
-								<div class="section s2">
-									<div class="s2child">
-										<img src="img/profile1.jpg">
-										<div>
-											<span>Creator</span>
-											<span>Sara1275</span>
-										</div>
-									</div>
-									<div class="s2child">
-										<img src="img/eth.png">
-										<div>
-											<span>Current Bid</span>
-											<span>2.5 ETH</span>
-										</div>
+								<div class="account">
+									<img src="img/eth.png" class="account__picture">
+									<div class="account__information">
+										<p class="account__info2">Current Bid</p>
+										<p class="account__info1">4.2 ETH</p>
 									</div>
 								</div>
-								<a href="#">Place a Bid</a>
 							</div>
+							<button class="nftBox__nft-button btn">Place a Bid</button>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="right">
-				<div class="account">
-					<a href="#">
-						<i class="fa-solid fa-bell"></i>
-					</a>
-					<div>
-						<img src="img/profile2.png">
-						<span>Aryan4852</span>
+			<aside>
+				<div class="aside__header ai-center">
+					<span class="aside__header-notification go-center iconWrapper">
+						<i class='bx bxs-bell'></i>
+					</span>
+					<div class="account">
+						<img src="img/profile1.jpg" class="account__picture">
+						<span class="account__info1">Joko Wiliam</span>
 					</div>
 				</div>
-				<div class="menu">
-					<div class="list l1">
-						<div class="head-list">
-							<p>Recently Favorites</p>
-							<a href="#">See All</a>
-						</div>
-						<div class="content-list">
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
+				<div class="aside__content">
+					<ul class="aside__list">
+						<h3 class="aside__list-title">Recently Favorites</h3>
+						<li class="aside__list-item ai-center">
+							<div class="account">
+								<img src="img/profile2.png" class="account__picture">
+								<div class="account__information">
+									<p class="account__info1">Out Of Frame</p>
+									<p class="account__info2">@robin#263</p>
 								</div>
-								<span>Sun, 14 Now</span>
 							</div>
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
+							<span class="aside__list-time">Sun, 14 Nov</span>
+						</li>
+						<li class="aside__list-item ai-center">
+							<div class="account">
+								<img src="img/profile1.jpg" class="account__picture">
+								<div class="account__information">
+									<p class="account__info1">Jago Santuy</p>
+									<p class="account__info2">@berian_bro</p>
 								</div>
-								<span>Sun, 14 Now</span>
 							</div>
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
+							<span class="aside__list-time">Sat, 13 Nov</span>
+						</li>
+					</ul>
+					<ul class="aside__list">
+						<h3 class="aside__list-title">Top Creator</h3>
+						<li class="aside__list-item ai-center">
+							<div class="account">
+								<img src="img/profile2.png" class="account__picture">
+								<div class="account__information">
+									<p class="account__info1">Alexander_774</p>
+									<p class="account__info2">@alexander_</p>
 								</div>
-								<span>Sun, 14 Now</span>
 							</div>
-						</div>
-					</div>
-					<div class="list l2">
-						<div class="head-list">
-							<p>Top Creator</p>
-						</div>
-						<div class="content-list">
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
+							<button class="aside__list-follow btn">Follow</button>
+						</li>
+						<li class="aside__list-item ai-center">
+							<div class="account">
+								<img src="img/profile1.jpg" class="account__picture">
+								<div class="account__information">
+									<p class="account__info1">Wade Warren</p>
+									<p class="account__info2">@wwarren#002</p>
 								</div>
-								<button>Follow</button>
 							</div>
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
-								</div>
-								<button>Follow</button>
-							</div>
-							<div class="content-child">
-								<div>
-									<img src="img/profile1.jpg">
-									<div>
-										<span>Out of Frame</span>
-										<span>@robin#263</span>
-									</div>
-								</div>
-								<button>Follow</button>
-							</div>
-						</div>
-					</div>
+							<button class="aside__list-follow btn">Follow</button>
+						</li>
+					</ul>
 				</div>
-			</div>
+			</aside>
 		</main>
 	</body>
-	<script src="https://kit.fontawesome.com/115fc15168.js" crossorigin="anonymous"></script>
 </html>

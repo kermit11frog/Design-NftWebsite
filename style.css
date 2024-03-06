@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Rubik&display=swap');
 
 :root {
-	--color1: #20323c;
-	--color2: #30444f;
-	--color3: #078cf3;
-	--color4: #8ea1a8;
-	--color5: #fbfcf8;
+	--color-background: #20323c;
+	--color-box: #3f4c55;
+	--color-blue: #078cf3;
+	--color-gray-text: #8ea1a8;
+	--color-white-text: #fbfcf8;
+
+	--text-transition: 0.2s;
+
+	--aside-gap: 25px;
+	--content-gap: 30px;
 }
 
 * {
@@ -16,488 +21,347 @@
 	box-sizing: border-box;
 	text-decoration: none;
 	list-style: none;
-	color: var(--color5);
+	font-family: Rubik, Poppins;
+}
+
+.ai-center {
+	display: flex;
+	align-items: center;
+} .go-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+} .btn {
+	padding: 7px 12px;
+	border-radius: 25px;
+	background-color: var(--color-gray-text);
+	color: white;
+	cursor: pointer;
 }
 
 body {
-	font-family: 'Rubik', sans-serif;
-	font-size: 16px;
-}
-
-p.mobile-size {
-	display: none;
-}
-
-aside {
-	width: 225px;
 	height: 100vh;
-	background-color: var(--color1);
-	border-right: 1px solid #304653;
-	padding: 0 20px;
-	float: left;
-	position: relative;
+	display: grid;
+	grid-template-columns: 275px 1fr;
+	grid-template-rows: 100vh;
+	background-color: var(--color-background);
+	color: var(--color-white-text);
 }
 
-aside .logo {
-	margin: 25px 0;
-	font-size: 1.6em;
-	font-weight: bold;
+.sidebar {
+	padding: 35px 25px;
+	border-right: 1px solid #39474f;
 }
 
-aside .aside-list {
-	margin-bottom: 20px;
+.sidebar__menu {
+	margin: 40px 0;
 }
 
-aside .aside-list > p {
-	color: var(--color3);
-	font-size: 0.9em;
-	letter-spacing: 2.5px;
-	margin-bottom: 5px;
+.sidebar__menu-title {
+	color: var(--color-blue);
+	letter-spacing: 3px;
+	font-size: 0.9rem;
+	margin-bottom: 10px;
 }
 
-aside .aside-list > div {
+.sidebar__menu-link {
+	padding: 10px 0;
+}
+
+.sidebar__menu-icon {
+	font-size: 1.5rem;
+	border-radius: 50%;
+	width: 40px;
+	height: 40px;
+	margin-right: 10px;
+	transition: var(--text-transition);
+}
+
+.sidebar__menu-text {
+	transition: var(--text-transition);
+}
+
+.sidebar__menu-item.active .sidebar__menu-icon {
+	background-color: var(--color-blue);
+}
+
+.sidebar__menu-icon,
+.sidebar__menu-text {
+	color: var(--color-gray-text);
+}
+
+.sidebar__menu-item.active .sidebar__menu-icon,
+.sidebar__menu-item.active .sidebar__menu-text,
+.sidebar__menu-item:hover .sidebar__menu-text,
+.sidebar__menu-item:hover .sidebar__menu-icon {
+	color: var(--color-white-text);
+}
+
+/* start main here */
+main {
+	display: grid;
+	grid-template-columns: 1fr 350px;
+}
+
+.account {
 	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
+	align-items: center;
+	gap: 10px;
 }
 
-aside .aside-list > div a {
-	height: 50px;
-	width: 100%;
-	line-height: 50px;
-	padding-left: 10px;
+.iconWrapper {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 1.2rem;
+	cursor: pointer;
 }
 
-aside .aside-list > div a span {
-	margin-left: 10px;
-}
-
-aside .aside-list > div a span,
-aside .aside-list > div a i {
-	color: var(--color4);
-	transition: 0.2s;
-}
-
-aside .aside-list > div a:hover span,
-aside .aside-list > div a:hover i {
-	color: var(--color5);
-}
-
-aside .aside-list > div a.active span {
-	color: var(--color5);
-}
-
-aside .aside-list > div a.active i {
-	padding: 10px;
-	background-color: var(--color3);
-	color: white;
+.account__picture {
+	width: 35px;
+	height: 35px;
+	object-fit: cover;
 	border-radius: 50%;
 }
 
-aside .aside-list > div a.active i,
-aside .aside-list > div a.active span {
-	position: relative;
-	right: 10px;
+.account__info2 {
+	color: var(--color-gray-text);
 }
 
-aside .info-box {
-	width: 185px;
-	height: 150px;
-	padding: 20px;
-	background: rgb(255,158,0);
-	background: linear-gradient(132deg, rgba(255,158,0,1) 0%, rgba(255,94,0,1) 100%); 
-	border-radius: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	text-align: center;
-	color: var(--color5);
-	font-size: 0.9em;
-	position: absolute;
-	bottom: 20px;
-	z-index: 1;
-}
-
-aside .info-box a {
-	padding: 10px 15px;
-	background: white;
-	color: black;
-	border-radius: 50px;
-	margin-top: 15px;
-	font-size: 0.88em;
-	display: inline;
-}
-
-main {
-	width: calc(100% - 225px);
-	height: 100vh;
-	background-color: var(--color1);
-	float: right;
-	display: grid;
-	grid-template-columns: 1fr 350px;
-	padding-top: 25px;
-}
-
-main .left {
-	padding: 0 25px;
+.content {
+	max-height: 100vh;
 	overflow: auto;
 	scrollbar-width: none;
+	padding: var(--content-gap);
 }
 
-main .left::-webkit-scrollbar {
-	display: none;
+.content::-webkit-scrollbar {
+	width: 0;
 }
 
-main .left form {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 25px;
+.searchbar {
+	position: relative;
 }
 
-main .left form label {
-	width: 60px;
-	height: 50px;
-	line-height: 50px;
-	padding: 0 5px 0 25px;
-	text-align: center;
-	background-color: var(--color2);
-	border-radius: 50px 0 0 50px;
-}
-
-main .left form input {
-	height: 50px;
+.searchbar__input {
 	width: 100%;
-	background-color: var(--color2);
-	border-radius: 0 50px 50px 0;
-	font-size: 0.9em;
+	padding: 15px 0;
+	padding-left: 55px;
+	border-radius: 15px;
+	background-color: var(--color-box);
 }
 
-main .left form input,
-main .left form label i {
-	color: var(--color4);
-}
-
-main .left .suggest-box {
-	background: linear-gradient(rgba(0,0,0, 0.40), rgba(0,0,0,0.80)), url("img/suggest.jpg");
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	border-radius: 40px;
-	height: 250px;
-	padding: 0 80px;
-	margin-bottom: 25px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-main .left .suggest-box > div {
-	width: 250px;
-	border-radius: 40px;
-	height: 250px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-main .left .suggest-box > div > p {
-	font-size: 1.6em;
-	line-height: 40px;
-	color: #f2f2f2;
-}
-
-main .left .suggest-box > div > div {
-	margin-top: 30px;
-}
-
-main .left .suggest-box > div > div a {
-	font-size: 0.9em;
-}
-
-main .left .suggest-box > div > div a:first-child {
-	padding: 10px 15px;
-	border-radius: 50px;
-	background-color: white;
-	color: #313131;
-}
-
-main .left .suggest-box > div > div a:last-child {
-	margin-left: 10px;
-}
-
-main .left .nfts {
-	margin-bottom: 25px;
-}
-
-main .left .nfts .head {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-main .left .nfts .head > p {
-	font-size: 1.5em;
-}
-
-main .left .nfts .head > ul {
-	display: flex;
-	gap: 20px;
-}
-
-main .left .nfts .head > ul li span {
-	color: var(--color4);
-	cursor: pointer;
-	transition: 0.2s;
-}
-
-main .left .nfts .head > ul li span:hover {
-	color: white;
-}
-
-main .left .nfts .head > ul li.active span {
-	color: white;
-	position: relative;
-} main .left .nfts .head > ul li.active span::after {
-	content: '';
+.searchbar__icon {
 	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
-	bottom: -5px;
-	width: 50%;
-	height: 2px;
-	background-color: var(--color3);
-	box-shadow: 2px 2px 5px var(--color3);
+	top: 0;
+	left: 0;
+	width: 55px;
+	height: 100%;
 }
 
-main .left .nfts .content {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 25px;
+.searchbar__input,
+.searchbar__icon {
+	color: var(--color-gray-text);
 }
 
-main .left .nfts .content .nft {
-	background-color: var(--color2);
-	border-radius: 50px;
-	padding: 0 25px;
-}
-
-main .left .nfts .content .nft .nft-picture {
-	width: 170px;
-	height: 170px;
-	position: relative;
-	left: 50%;
-	transform: translate(-50%,-50%);
+.suggestBox {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("img/suggest.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	height: 250px;
 	border-radius: 30px;
-	overflow: hidden;
+	margin: var(--content-gap) 0;
+	display: flex;
 }
 
-main .left .nfts .content .nft .nft-picture img {
+.suggestBox__section {
+	flex: 1;
+}
+
+.suggestBox__section:first-child {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 40px;
+}
+
+.suggestBox__text {
+	font-size: 1.8rem;
+	margin-bottom: 20px;
+}
+
+.suggestBox__link {
+	background-color: white;
+	color: black;
+}
+
+.suggestBox__link:last-child {
+	margin-left: 10px;
+	background: none;
+	color: white;
+}
+
+.suggestBox__picture {
+	width: 100%;
+	height: 100%;
+}
+
+.nftBox__header {
+	justify-content: space-between;
+}
+
+.nftBox__links {
+	gap: 15px;
+}
+
+.nftBox__link {
+	color: var(--color-gray-text);
+	transition: var(--text-transition);
+	position: relative;
+}
+
+.nftBox__link::after {
+	content: "";
+	position: absolute;
+	bottom: -7px;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background-color: var(--color-blue);
+	border-radius: 10px;
+	transform: scale(0);
+	transform-origin: center;
+	transition: 0.4s;
+}
+
+.nftBox__link.active,
+.nftBox__link:hover {
+	color: var(--color-white-text);
+}
+
+.nftBox__link.active::after,
+.nftBox__link:hover::after {
+	transform: scale(1);
+}
+
+.nftBox__nftList {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-rows: 425px;
+	align-items: flex-end;
+	grid-gap: var(--content-gap);
+}
+
+.nftBox__nft {
+	background-color: var(--color-box);
+	border-radius: 2.5rem;
+	height: 325px;
+	position: relative;
+	padding: 0 20px;
+	padding-top: 100px;
+}
+
+.nftBox__nft-pictureBox {
+	width: 175px;
+	height: 175px;
+	border-radius: inherit;
+	overflow: hidden;
+	position: absolute;
+	top: -50%;
+	left: 50%;
+	transform: translate(-50%, 50%);
+}
+
+.nftBox__nft-picture {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 }
 
-main .left .nfts .content .nft .nft-picture i {
+.nftBox__nft-like {
 	position: absolute;
 	top: 10px;
 	right: 10px;
-	cursor: pointer;
-	padding: 10px;
-	background-color: rgba(0, 0, 0, 0.10);
-	border-radius: 50%;
+	background-color: #0000003d;
+	backdrop-filter: blur(10px);
 }
 
-main .left .nfts .content .nft {
-	margin-top: 110px;
-}
-
-main .left .nfts .content .nft-information {
-	margin-top: -85px;
-}
-
-main .left .nfts .content .nft-information .section {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+.nftBox__nft-row {
 	margin: 20px 0;
-	gap: 30px;
+	justify-content: space-between;
 }
 
-main .left .nfts .content .nft-information .s1 span:last-child {
-	padding: 7px 10px;
-	background-color: #7b7b7b;
-	border-radius: 50px;
-	font-size: 0.9em;
-}
-
-main .left .nfts .content .nft-information .s2 .s2child {
-	display: flex;
-	gap: 5px;
-	font-size: 0.8em;
-}
-
-main .left .nfts .content .nft-information .s2 .s2child img {
-	width: 35px;
-	height: 35px;
-	object-fit: cover;
-	border-radius: 50%;
-}
-
-main .left .nfts .content .nft-information .s2 .s2child div {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 3px;
-}
-
-main .left .nfts .content .nft-information .s2 .s2child > div span:first-child {
-	color: var(--color4);
-}
-
-main .left .nfts .content .nft-information > a {
-	padding: 14px 17px;
-	background-color: var(--color3);
-	border-radius: 50px;
-	margin: auto;
-  	margin-bottom: auto;
+.nftBox__nft-button {
+	padding: 13px 20px;
+	font-size: 1rem;
+	color: white;
+	background-color: var(--color-blue);
+	margin: 0 auto;
+	margin-top: 40px;
 	display: block;
-	width: 120px;
-	text-align: center;
-	margin-bottom: 25px;
 }
 
-main .right .account {
-	padding: 0 25px;
-	display: flex;
-	align-items: center;
+.aside__header {
+	padding: 0 var(--aside-gap);
+	height: 100px;
 	gap: 20px;
-	height: 50px;
-	margin-bottom: 25px;
 }
 
-main .right .account > a {
-	width: 35px;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-	background-color: var(--color2);
+.aside__header-notification {
+	background-color: var(--color-box);
+	position: relative;
+}
+
+.aside__header-notification::after {
+	content: "";
+	width: 7px;
+	height: 7px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
 	border-radius: 50%;
+	background-color: red;
 }
 
-main .right .account > div {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-main .right .account > div img {
+.aside__header .account__picture {
 	width: 40px;
 	height: 40px;
-	object-fit: cover;
-	border-radius: 50%;
 }
 
-main .right .menu {
-	background-color: var(--color2);
-	border-radius: 40px 0 0 0;
-	padding: 40px 25px;
+.aside__content {
+	background-color: var(--color-box);
 	height: calc(100vh - 100px);
+	border-radius: 40px 0 0 0;
+	padding: 50px var(--aside-gap);
 }
 
-main .right .menu .list .head-list {
-	display: flex;
-	align-items: center;
+.aside__list:last-child {
+	margin-top: 50px;
+}
+
+.aside__list-item {
 	justify-content: space-between;
-	margin-bottom: 20px;
+	margin: 15px 0;
 }
 
-main .right .menu .list .head-list p {
-	font-size: 1.2em;
-}
-
-main .right .menu .list .head-list a {
-	color: var(--color4);
-	font-size: 0.8em;
-	transition: 0.2s;
-}
-
-main .right .menu .list .head-list a:hover {
-	color: white;
-}
-
-main .right .menu .list .content-list {
-	margin-bottom: 40px;
-}
-
-main .right .menu .list .content-list .content-child {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	margin-bottom: 20px;
-}
-
-main .right .menu .list .content-list .content-child > div {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-}
-
-main .right .menu .list .content-list .content-child > div img {
-	object-fit: cover;
-}
-
-main .right .menu .list.l1 .content-list .content-child > div img {
-	border-radius: 15px;
+.aside__list:first-child .aside__list-item .account__picture {
 	width: 50px;
 	height: 50px;
-} main .right .menu .list.l2 .content-list .content-child > div img {
-	border-radius: 50%;
+	border-radius: 10px;
+}
+
+.aside__list:last-child .aside__list-item .account__picture {
 	width: 45px;
 	height: 45px;
 }
 
-main .right .menu .list .content-list .content-child > div > div {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
+.aside__list-time {
+	font-size: 0.9rem;
+	color: var(--color-gray-text);
 }
 
-main .right .menu .list .content-list .content-child > div > div span:first-child {
-	font-size: 0.93em;
-} main .right .menu .list .content-list .content-child > div > div span:last-child,
-main .right .menu .list.l1 .content-list .content-child > span {
-	font-size: 0.87em;
-	color: var(--color4);
-}
-
-main .right .menu .list.l2 .content-list .content-child > button {
-	padding: 10px 15px;
-	background-color: var(--color3);
-	color: white;
-	border-radius: 50px;
-	cursor: pointer;
-}
-
-@media screen and (max-width: 1500px) {
-	main .left .nfts .content {
-		grid-template-columns: repeat(2, 1fr);
-	}
-}
-
-@media screen and (max-width: 1200px) {
-	p.mobile-size {
-		display: block;
-		color: black;
-		font-size: 1.4rem;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	main,aside {
-		display: none;
-	}
+.aside__list-follow {
+	background-color: var(--color-blue);
 }
